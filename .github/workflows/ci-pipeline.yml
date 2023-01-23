@@ -1,0 +1,22 @@
+name: 2021-2022 VEX CI
+
+on:
+  push:
+    branches:
+        - '**'
+  pull_request:
+    branches:
+        - main
+
+jobs:
+  vex-build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: VEX Build
+      uses: schineaj23/vex-build@v1.0
+      with:
+        path: MyProject1/
